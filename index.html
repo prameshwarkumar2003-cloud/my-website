@@ -1,0 +1,469 @@
+Here’s a clean, creative, and simple single-file HTML website for Online Update PK Number 1 focused on SSC CGL updates and job links.
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Update PK Number 1 | SSC CGL Updates & Jobs</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        body {
+            background: #f0f4f8;
+            color: #1a1a2e;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #0f3460, #16213e);
+            color: white;
+            padding: 1.2rem 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .header-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            background: #e94560;
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.1rem;
+        }
+
+        .logo-text h1 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-text span {
+            font-size: 0.75rem;
+            opacity: 0.85;
+            display: block;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 1.4rem;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #e94560;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%);
+            color: white;
+            padding: 3.5rem 1.5rem;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2.1rem;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 1.8rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #e94560;
+            color: white;
+            padding: 0.35rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+            color: #0f3460;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::before {
+            content: '';
+            width: 6px;
+            height: 28px;
+            background: #e94560;
+            border-radius: 3px;
+        }
+
+        /* Updates Cards */
+        .updates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.4rem;
+            margin-bottom: 3rem;
+        }
+
+        .update-card {
+            background: white;
+            border-radius: 14px;
+            padding: 1.4rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            border-left: 5px solid #0f3460;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .update-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .update-card.important {
+            border-left-color: #e94560;
+        }
+
+        .update-date {
+            font-size: 0.8rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .update-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.6rem;
+            color: #16213e;
+        }
+
+        .update-card p {
+            font-size: 0.95rem;
+            color: #444;
+            margin-bottom: 1rem;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #e8f0fe;
+            color: #0f3460;
+            font-size: 0.75rem;
+            padding: 0.25rem 0.7rem;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .tag.red {
+            background: #fde8ec;
+            color: #e94560;
+        }
+
+        /* Job Links */
+        .jobs-section {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            margin-bottom: 3rem;
+        }
+
+        .job-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.1rem 0;
+            border-bottom: 1px solid #eee;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .job-item:last-child {
+            border-bottom: none;
+        }
+
+        .job-info h4 {
+            font-size: 1.05rem;
+            color: #16213e;
+            margin-bottom: 0.3rem;
+        }
+
+        .job-info span {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .btn {
+            background: #0f3460;
+            color: white;
+            text-decoration: none;
+            padding: 0.55rem 1.3rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: background 0.2s;
+            white-space: nowrap;
+        }
+
+        .btn:hover {
+            background: #e94560;
+        }
+
+        .btn.outline {
+            background: transparent;
+            border: 2px solid #0f3460;
+            color: #0f3460;
+        }
+
+        .btn.outline:hover {
+            background: #0f3460;
+            color: white;
+        }
+
+        /* Quick Links */
+        .quick-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .quick-card {
+            background: linear-gradient(135deg, #0f3460, #1a1a2e);
+            color: white;
+            padding: 1.3rem;
+            border-radius: 12px;
+            text-align: center;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+
+        .quick-card:hover {
+            transform: scale(1.03);
+        }
+
+        .quick-card h4 {
+            margin-bottom: 0.4rem;
+            font-size: 1.05rem;
+        }
+
+        .quick-card p {
+            font-size: 0.85rem;
+            opacity: 0.85;
+        }
+
+        /* Footer */
+        footer {
+            background: #16213e;
+            color: white;
+            text-align: center;
+            padding: 2rem 1.5rem;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #e94560;
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .hero h2 {
+                font-size: 1.6rem;
+            }
+            nav {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                gap: 1rem;
+            }
+            nav a {
+                margin-left: 0;
+            }
+            .job-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">PK</div>
+                <div class="logo-text">
+                    <h1>Online Update PK</h1>
+                    <span>Number 1 • SSC CGL Specialist</span>
+                </div>
+            </div>
+            <nav>
+                <a href="#updates">Updates</a>
+                <a href="#jobs">Jobs</a>
+                <a href="#links">Quick Links</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="badge">🔥 Live SSC CGL Updates</div>
+        <h2>Online Update PK Number 1</h2>
+        <p>India’s trusted source for latest SSC CGL notifications, exam updates, answer keys, results & direct job links.</p>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+
+        <!-- Latest Updates -->
+        <h2 class="section-title" id="updates">Latest SSC CGL Updates</h2>
+        <div class="updates-grid">
+
+            <div class="update-card important">
+                <div class="update-date">15 Aug 2026</div>
+                <h3>SSC CGL 2026 Notification Released</h3>
+                <p>Official notification for Combined Graduate Level Examination 2026 has been published. Check eligibility, vacancies & important dates.</p>
+                <span class="tag red">Important</span>
+            </div>
+
+            <div class="update-card">
+                <div class="update-date">12 Aug 2026</div>
+                <h3>Tier-1 Admit Card Available</h3>
+                <p>Candidates can now download their Admit Cards for SSC CGL Tier-1 from the official website using registration number & password.</p>
+                <span class="tag">Admit Card</span>
+            </div>
+
+            <div class="update-card">
+                <div class="update-date">08 Aug 2026</div>
+                <h3>Answer Key Challenge Window Open</h3>
+                <p>Provisional Answer Key for SSC CGL Tier-1 is out. Candidates can raise objections till 18th August 2026.</p>
+                <span class="tag">Answer Key</span>
+            </div>
+
+            <div class="update-card">
+                <div class="update-date">05 Aug 2026</div>
+                <h3>Result Expected Soon</h3>
+                <p>SSC is likely to declare the Tier-1 result in the last week of August. Stay tuned for official updates.</p>
+                <span class="tag">Result</span>
+            </div>
+
+        </div>
+
+        <!-- Job Links -->
+        <div class="jobs-section" id="jobs">
+            <h2 class="section-title">Direct Job & Exam Links</h2>
+
+            <div class="job-item">
+                <div class="job-info">
+                    <h4>SSC CGL 2026 Official Notification</h4>
+                    <span>Apply Online • Last Date: Check Notification</span>
+                </div>
+                <a href="https://ssc.gov.in" target="_blank" class="btn">Apply / View</a>
+            </div>
+
+            <div class="job-item">
+                <div class="job-info">
+                    <h4>Download Admit Card (Tier-1)</h4>
+                    <span>SSC Official Portal</span>
+                </div>
+                <a href="https://ssc.gov.in" target="_blank" class="btn">Download</a>
+            </div>
+
+            <div class="job-item">
+                <div class="job-info">
+                    <h4>Previous Year Papers & Syllabus</h4>
+                    <span>Free PDF Resources</span>
+                </div>
+                <a href="https://ssc.gov.in" target="_blank" class="btn outline">View Resources</a>
+            </div>
+
+            <div class="job-item">
+                <div class="job-info">
+                    <h4>SSC Official Website</h4>
+                    <span>ssc.gov.in – All Notifications</span>
+                </div>
+                <a href="https://ssc.gov.in" target="_blank" class="btn">Visit Site</a>
+            </div>
+        </div>
+
+        <!-- Quick Links -->
+        <h2 class="section-title" id="links">Quick Access</h2>
+        <div class="quick-links">
+            <a href="https://ssc.gov.in" target="_blank" class="quick-card">
+                <h4>SSC Official</h4>
+                <p>Main Website</p>
+            </a>
+            <a href="https://ssc.gov.in" target="_blank" class="quick-card">
+                <h4>Apply Online</h4>
+                <p>CGL Registration</p>
+            </a>
+            <a href="https://ssc.gov.in" target="_blank" class="quick-card">
+                <h4>Result Portal</h4>
+                <p>Check Status</p>
+            </a>
+            <a href="https://ssc.gov.in" target="_blank" class="quick-card">
+                <h4>Admit Card</h4>
+                <p>Download Now</p>
+            </a>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>Online Update PK Number 1</strong> — Your No.1 source for SSC CGL updates</p>
+        <p style="margin-top: 0.6rem;">© 2026 Online Update PK • All rights reserved</p>
+        <p style="margin-top: 0.4rem; font-size: 0.8rem;">
+            This is an unofficial information portal. Always verify from 
+            <a href="https://ssc.gov.in" target="_blank">ssc.gov.in</a>
+        </p>
+    </footer>
+
+</body>
+</html>
